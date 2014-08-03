@@ -3,13 +3,40 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>{{ title }}</title>
+	<title>{{ page }}</title>
 	<link type="text/css" rel="stylesheet" href="/fonts/Fira/fira.css" />
 	<link type="text/css" rel="stylesheet" href="/css/main.css" />
-	<script src="/js/bower/jquery.js"></script>
+	<script type="text/javascript" src="/js/bower/jquery.js"></script>
+	<script type="text/javascript" src="/js/main.js"></script>
 	{{{ yield-head }}}
 </head>
 <body>
-	{{{ yield }}}
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="title-bar">
+				<div class="brand">
+					<h1 class="name">{{ siteTitle }}</h1>
+				</div>
+				<div class="section-name {{#active}}writing{{/active}}"><a href="/writing">Writing</a></div>
+				<div class="section-name {{#active}}software{{/active}}"><a href="/software">Software</a></div>
+				<div class="section-name {{#active}}translation-work{{/active}}"><a href="/translation-work">Translation Work</a></div>
+				<div class="section-name {{#active}}resume{{/active}}"><a href="/resume">Resume</a></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-3">
+			pic
+		</div>
+		<div class="col-md-9">
+			{{{ yield }}}
+		</div>
+	</div>
+
+</div>
+
 </body>
 </html>

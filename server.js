@@ -25,18 +25,9 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', routes.home);
-
-
-app.use(function(req, res, next) {
-	var err = new Error('Not Found');
-	err.status = 404;
-	res.render('error', {
-		title: 'not Found',
-		message: err.message,
-		dev: app.get('env') === 'development'
-	});
-});
+app.get('/', routes.main.landing);
+app.get('/:page', routes.main.page);
+app.use(routes.notFound);
 
 var server = app.listen(config.PORT, function() {
 	debug('Express server listening on port ' + server.address().port);

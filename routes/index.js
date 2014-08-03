@@ -1,6 +1,7 @@
 
 var routes = {
-	home: require('./home')
+	main: require('./main'),
+	notFound: require('./notFound')
 };
 
 module.exports = routes;

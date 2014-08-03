@@ -1,0 +1,36 @@
+// totally arbitrary, just testing the less build
+.top-row {
+	border: 1px solid #000000;
+}
+.title-bar {
+	display: flex;
+	flex-flow: wrap;
+	justify-content: space-around;
+	font-size: 1.2em;
+	.selected {
+		background-color: lightgray;
+	}
+	.brand {
+		align-self: center;
+		flex: 0 0 30%;
+		.name {
+			font-weight: 300;
+			margin: 0;
+			padding: 0;
+		}
+	}
+	.section-name {
+		align-self: center;
+		padding: 1em;
+		cursor: pointer;
+		border: 1px solid transparent;
+		font-weight: 300;
+
+		a {
+			color: #000000;
+		}
+		&:hover {
+			border: 1px dotted #000000;
+		}
+	}
+}
