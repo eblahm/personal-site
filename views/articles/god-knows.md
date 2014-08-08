@@ -1,6 +1,10 @@
-title: God-Knows-Somewhere-America
-slug: god-knows-somewhere-america
-date: 12-27-2008 06:52am
+<!-- {
+"title": "God-Knows-Somewhere-America",
+"tags": ["story"],
+"date": "12-27-2008"
+} -->
+
+
 I know that the town is in Williams county.  And Williams county is somewhere in Ohio.  The town has a building that says "Veteran's Memorial" on the side.  It looks like a rec center more than a memorial.  Maybe its a museum.  The backdrop is farmland.  I don't know for sure it if was farmland because it was dark and there was snow on the ground.  The snow helped the feeling of darkness.
 I had told myself that I would drive to the lights of the town, no further.  I didn't want to travel too far from the highway-side-Ramada.  I was right to do so because this town in Williams county Ohio temporarily healed the loneliness of solitary highway driving that hits me especially hard at night.
 "Welcome to America, Matthew," the town said.

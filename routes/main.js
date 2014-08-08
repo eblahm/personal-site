@@ -22,7 +22,11 @@ exports.page = function(req, res) {
 	if (/(resume|software|translation-work|writing)/.test(page)) {
 		res.render(page, _.assign(res.templateValues, {
 			title: page,
-			page: page
+			page: page,
+			articles: _.map(meta, function(props, slug) {
+				props.slug = slug;
+				return props
+			})
 		}));
 	}
 	else {

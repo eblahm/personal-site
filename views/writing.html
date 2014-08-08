@@ -1,3 +1,6 @@
 
 
-all the stuff i've written
+<h2>all the stuff i've written</h2>
+{{#articles}}
+	<a href="/writing/{{ slug }}">{{ title }}</a> {{#dateFormat}}MM-DD-YYYY{{/dateFormat}}<br>
+{{/articles}}
