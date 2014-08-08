@@ -4,7 +4,7 @@
 }
 .title-bar {
 	display: flex;
-	flex-flow: wrap;
+	flex-flow: no-wrap;
 	justify-content: space-around;
 	font-size: 1.2em;
 	.selected {
@@ -15,6 +15,7 @@
 		flex: 0 0 30%;
 		.name {
 			font-weight: 300;
+			font-size: 1.8em;
 			margin: 0;
 			padding: 0;
 		}
@@ -31,6 +32,37 @@
 		}
 		&:hover {
 			border: 1px dotted #000000;
+		}
+	}
+}
+
+@media (max-width: @screen-tablet) {
+	.title-bar {
+		flex: 0 0 0;
+		.brand {
+			.name {
+				font-size: 1.2em;
+				font-weight: bold;
+			}
+		}
+
+		.section-name {
+			padding: .5em;
+		}
+	}
+}
+
+@media (max-width: @screen-phone) {
+	.title-bar {
+		.brand {
+			.name {
+				font-size: 1em;
+				font-weight: bold;
+			}
+		}
+		.section-name {
+			font-size: .8em;
+			padding: .5em;
 		}
 	}
 }
