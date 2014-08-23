@@ -7,28 +7,26 @@ var debug = require('debug')('personal-site'),
 	logger = require('morgan'),
 	cookieParser = require('cookie-parser'),
 	bodyParser = require('body-parser'),
-	hogan = require('hogan-express'),
+	hbs = require('express3-handlebars'),
 	routes = require('./routes'),
 	config = require('./config.json'),
-	helpers = require('./lib/helpers'),
 	_ = require('lodash'),
 	app = express();
 
-// view engine setup
-app.engine('html', hogan);
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'html');
-app.set('layout', 'decorator');
+app.engine('.html', hbs({
+	defaultLayout: 'main.html',
+	helpers: {
+		loadGlobals: function () { _.assign(this, config); }
+	}
+}));
+app.set('view engine', '.html');
 
 app.use(logger('common'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(function(req, res, next) {
-	res.templateValues = _.assign(config, helpers);
-	next();
-});
 
 app.get('/', routes.main.landing);
 app.get('/:page', routes.main.page);

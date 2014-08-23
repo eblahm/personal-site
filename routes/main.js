@@ -14,20 +14,20 @@ marked.setOptions({
 });
 
 exports.landing = function(req, res) {
-	res.render('home', res.templateValues);
+	res.render('home', {});
 };
 
 exports.page = function(req, res) {
 	var page = req.params.page;
 	if (/(resume|software|translation-work|writing)/.test(page)) {
-		res.render(page, _.assign(res.templateValues, {
+		res.render(page, {
 			title: page,
 			page: page,
 			articles: _.map(meta, function(props, slug) {
 				props.slug = slug;
 				return props
 			})
-		}));
+		});
 	}
 	else {
 		notFound(req, res);
@@ -35,11 +35,12 @@ exports.page = function(req, res) {
 };
 
 exports.article = function(req, res) {
-	var article = fs.readFileSync(path.dirname(__dirname) + "/views/articles/" + req.params.article + ".md", 'utf8');
-	res.templateValues = _.assign(res.templateValues, meta[req.params.article]);
-	res.render('article', _.assign(res.templateValues, {
+	var markdownContent = fs.readFileSync(path.dirname(__dirname) + "/views/articles/" + req.params.article + ".md", 'utf8');
+	var article = meta[req.params.article];
+	article.content = marked(markdownContent);
+	res.render('article', {
 		page: 'writing',
-		article: marked(article)
-	}));
+		article: article
+	});
 };
 
