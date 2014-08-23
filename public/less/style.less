@@ -4,7 +4,7 @@
 }
 
 .brand {
-	padding: 1em;
+	padding: 1em 0;
 	.name {
 		white-space: nowrap;
 		font-weight: 300;
@@ -19,7 +19,7 @@
 	list-style: none;
 	padding: 0;
 	.active {
-		background-color: lightgray;
+		text-decoration: underline;
 	}
 	.section-name {
 		cursor: pointer;
@@ -47,6 +47,10 @@
 	.nav {
 		display: flex;
 		font-size: 1em;
+		.active {
+			background-color: lightgray;
+			text-decoration: none;
+		}
 	}
 	.section-name {
 		flex: 1 0 auto;
@@ -64,6 +68,13 @@
 			font-weight: bold;
 		}
 	}
+	.nav {
+		.active {
+			background-color: lightgray;
+			text-decoration: none;
+		}
+	}
+
 	.section-name {
 		font-size: .8em;
 		padding: .5em;
