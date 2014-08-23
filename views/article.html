@@ -1,5 +1,5 @@
 <h1>{{ article.title }}</h1>
-{{#dateFormat}}MM-DD-YYYY{{/dateFormat}}
+{{dateFormat "MM-DD-YYYY" article.date}}
 <div class="article">
 	{{{ article.content }}}
 </div>

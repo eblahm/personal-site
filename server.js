@@ -10,15 +10,14 @@ var debug = require('debug')('personal-site'),
 	hbs = require('express3-handlebars'),
 	routes = require('./routes'),
 	config = require('./config.json'),
+	helpers = require('./lib/helpers'),
 	_ = require('lodash'),
 	app = express();
 
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.html', hbs({
 	defaultLayout: 'main.html',
-	helpers: {
-		loadGlobals: function () { _.assign(this, config); }
-	}
+	helpers: helpers
 }));
 app.set('view engine', '.html');
 
