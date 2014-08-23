@@ -2,27 +2,26 @@
 .top-row {
 	border: 1px solid #000000;
 }
-.title-bar {
-	display: flex;
-	flex-flow: no-wrap;
-	justify-content: space-around;
+
+.brand {
+	padding: 1em;
+	.name {
+		white-space: nowrap;
+		font-weight: 300;
+		font-size: 1.8em;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.nav {
 	font-size: 1.2em;
-	.selected {
+	list-style: none;
+	padding: 0;
+	.active {
 		background-color: lightgray;
 	}
-	.brand {
-		align-self: center;
-		flex: 0 0 30%;
-		.name {
-			font-weight: 300;
-			font-size: 1.8em;
-			margin: 0;
-			padding: 0;
-		}
-	}
 	.section-name {
-		align-self: center;
-		padding: 1em;
 		cursor: pointer;
 		border: 1px solid transparent;
 		font-weight: 300;
@@ -31,10 +30,11 @@
 			color: #000000;
 		}
 		&:hover {
-			border: 1px dotted #000000;
+			border: 1px solid #000000;
 		}
 	}
 }
+
 .article {
 	font-size: 1.2em;
 	line-height: 1.6em;
@@ -43,34 +43,29 @@
 	}
 }
 
-@media (max-width: @screen-tablet) {
-	.title-bar {
-		flex: 0 0 0;
-		.brand {
-			.name {
-				font-size: 1.2em;
-				font-weight: bold;
-			}
-		}
-
-		.section-name {
-			padding: .5em;
-		}
-
+@media (min-width: @screen-phone) and (max-width: @screen-md){
+	.nav {
+		display: flex;
+		font-size: 1em;
+	}
+	.section-name {
+		flex: 1 0 auto;
+		padding: .5em 0;
+		margin: auto 0;
+		text-align: center;
 	}
 }
 
 @media (max-width: @screen-phone) {
-	.title-bar {
-		.brand {
-			.name {
-				font-size: 1em;
-				font-weight: bold;
-			}
+	.brand {
+		padding: .5em;
+		.name {
+			font-size: 1.2em;
+			font-weight: bold;
 		}
-		.section-name {
-			font-size: .8em;
-			padding: .5em;
-		}
+	}
+	.section-name {
+		font-size: .8em;
+		padding: .5em;
 	}
 }
