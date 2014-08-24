@@ -48,6 +48,24 @@ module.exports = function(grunt) {
 				src: 'public/css/main.css'
 			}
 		},
+
+		markdown: {
+			all: {
+				files: [
+					{
+						expand: true,
+						src: 'content/articles/*.md',
+						dest: 'views/articles/',
+						ext: '.html',
+						flatten: true
+					}
+				],
+				options: {
+					template: 'content/articles/template.html'
+				}
+			}
+		},
+
 		nodemon: {
 			server: {
 				script: 'server.js',
@@ -59,6 +77,7 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+
 		watch: {
 			scripts: {
 				files: ['public/**/*.less'],
@@ -86,8 +105,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-autoprefixer');
+	grunt.loadNpmTasks('grunt-markdown');
+	grunt.loadTasks('tasks');
 
-	grunt.registerTask('default', ['copy:bower', 'less', 'jshint']);
+	grunt.registerTask('default', ['copy:bower', 'less', 'jshint', 'markdown']);
 	grunt.registerTask('run', ['less', 'concurrent:tasks']);
 
 };

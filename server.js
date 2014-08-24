@@ -7,19 +7,26 @@ var debug = require('debug')('personal-site'),
 	logger = require('morgan'),
 	cookieParser = require('cookie-parser'),
 	bodyParser = require('body-parser'),
-	hbs = require('express3-handlebars'),
+	hbs = require('express-hbs'),
 	routes = require('./routes'),
 	config = require('./config.json'),
 	helpers = require('./lib/helpers'),
 	_ = require('lodash'),
 	app = express();
 
-app.set('views', path.join(__dirname, 'views'));
-app.engine('.html', hbs({
-	defaultLayout: 'main.html',
-	helpers: helpers
+
+app.engine('.html', hbs.express3({
+	defaultLayout: path.join(__dirname + '/views/layouts/main'),
+	extname: '.html',
+	helpers: helpers,
+	partialsDir: path.join(__dirname + '/views/partials/'),
+	layoutsDir: path.join(__dirname + '/views/layouts')
 }));
+_.each(helpers, function(fn, name){
+	hbs.registerHelper(name, fn);
+});
 app.set('view engine', '.html');
+app.set('views', path.join(__dirname, 'views'));
 
 app.use(logger('common'));
 app.use(bodyParser.json());

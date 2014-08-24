@@ -2,16 +2,7 @@
 
 var _ = require('lodash'),
 	notFound = require('./notFound'),
-	meta = require('../lib/meta'),
-	path = require('path'),
-	fs = require('fs'),
-	marked = require('marked');
-
-marked.setOptions({
-	gfm: true,
-	breaks: true,
-	sanitize: false
-});
+	meta = require('../content/meta.json');
 
 exports.landing = function(req, res) {
 	res.render('home', {});
@@ -23,7 +14,7 @@ exports.page = function(req, res) {
 		res.render(page, {
 			title: page,
 			page: page,
-			articles: _.map(meta, function(props, slug) {
+			articles: _.map(meta['articles'], function(props, slug) {
 				props.slug = slug;
 				return props
 			})
@@ -35,12 +26,11 @@ exports.page = function(req, res) {
 };
 
 exports.article = function(req, res) {
-	var markdownContent = fs.readFileSync(path.dirname(__dirname) + "/views/articles/" + req.params.article + ".md", 'utf8');
-	var article = meta[req.params.article];
-	article.content = marked(markdownContent);
-	res.render('article', {
+	var slug = req.params.article;
+	res.render('articles/' + slug, {
 		page: 'writing',
-		article: article
+		slug: slug,
+		layout: 'article'
 	});
 };
 

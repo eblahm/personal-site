@@ -1,0 +1,42 @@
+{
+  "articles": {
+    "chili": {
+      "title": "More Than Chili",
+      "tags": [
+        "college essay"
+      ],
+      "date": "2008-11-14T05:00:00.000Z"
+    },
+    "god-knows": {
+      "title": "God-Knows-Somewhere-America",
+      "tags": [
+        "story"
+      ],
+      "date": "2008-12-27T05:00:00.000Z"
+    },
+    "immigration-and-meat": {
+      "title": "Immigrant Labor and the Meat Industry",
+      "tags": [
+        "college essay"
+      ],
+      "date": "2008-10-02T04:00:00.000Z"
+    },
+    "lsd": {
+      "title": "LSD! (Important Info for All You Hippies Out There)",
+      "tags": [
+        "college essay"
+      ],
+      "date": "2009-09-04T04:00:00.000Z"
+    },
+    "speicher": {
+      "title": "Speicher, The Man Behind the Name",
+      "tags": [
+        "military"
+      ],
+      "date": "2009-01-26T05:00:00.000Z"
+    },
+    "template.html": {
+      "title": "template.html"
+    }
+  }
+}
