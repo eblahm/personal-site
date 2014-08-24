@@ -1,6 +1,6 @@
 {{!< main}}
-{{#data 'article' slug}}
-	<h1>{{ title }}</h1>
+{{#data 'articles' slug}}
+	<h1>{{title}}</h1>
 	{{dateFormat "MM-DD-YYYY" date}}
 	<div class="article">
 		{{{block 'content'}}}

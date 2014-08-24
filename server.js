@@ -19,7 +19,6 @@ app.engine('.html', hbs.express3({
 	defaultLayout: path.join(__dirname + '/views/layouts/main'),
 	extname: '.html',
 	helpers: helpers,
-	partialsDir: path.join(__dirname + '/views/partials/'),
 	layoutsDir: path.join(__dirname + '/views/layouts')
 }));
 _.each(helpers, function(fn, name){

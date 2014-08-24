@@ -14,6 +14,7 @@ module.exports = function(grunt) {
 
 		var data = _.reduce(dirs, function(obj1, dir) {
 			obj1[dir] = _.reduce(fs.readdirSync(path.join(DATAROOT, dir)), function(obj2, file) {
+				if (!/.+\.md$/.test(file)) return obj2;
 				var contents = fs.readFileSync(path.join(DATAROOT, dir, file));
 				var comment = /^<!--([^]*)-->/i;
 				var meta = comment.exec(contents.toString());
