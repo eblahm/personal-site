@@ -79,12 +79,16 @@ module.exports = function(grunt) {
 		},
 
 		watch: {
-			scripts: {
+			less: {
 				files: ['public/**/*.less'],
 				tasks: ['less', 'autoprefixer'],
 				options: {
 					spawn: false
 				}
+			},
+			markdown: {
+				files: ['content/**/*.md'],
+				tasks: ['markdown']
 			}
 		},
 

@@ -34,6 +34,20 @@
         "military"
       ],
       "date": "2009-01-26T05:00:00.000Z"
+    },
+    "stripped-and-savy": {
+      "title": "Stripped and Savvy: Church Rob Bell Style",
+      "tags": [
+        "college essay"
+      ],
+      "date": "2009-03-24T04:00:00.000Z"
+    },
+    "webhook": {
+      "title": "Building a Webhook Between Draft and Google App Engine",
+      "tags": [
+        "programming"
+      ],
+      "date": "2013-07-14T04:00:00.000Z"
     }
   }
 }
