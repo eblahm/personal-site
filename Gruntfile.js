@@ -1,3 +1,4 @@
+'use strict';
 
 module.exports = function(grunt) {
 	grunt.initConfig({
@@ -88,7 +89,7 @@ module.exports = function(grunt) {
 			},
 			markdown: {
 				files: ['content/**/*.md'],
-				tasks: ['markdown']
+				tasks: ['markdown', 'meta']
 			}
 		},
 
@@ -112,7 +113,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-markdown');
 	grunt.loadTasks('tasks');
 
-	grunt.registerTask('default', ['copy:bower', 'less', 'jshint', 'markdown']);
+	grunt.registerTask('default', ['copy:bower', 'less', 'jshint', 'markdown', 'meta']);
 	grunt.registerTask('run', ['less', 'concurrent:tasks']);
 
 };
