@@ -1,6 +1,14 @@
 
-
-<h2>all the stuff i've written</h2>
-{{#articles}}
-	<a href="/writing/{{ slug }}">{{ title }}</a> {{dateFormat "MM-DD-YYYY" date}}<br>
-{{/articles}}
+<div class="col-md-12">
+	<ul class="article-list">
+	{{#articles}}
+		<li>
+			<span class="">{{dateFormat "DD MMM YYYY" date}}</span>
+			<h2>
+				<a href="/writing/{{ slug }}">{{ title }}</a>
+			</h2>
+			{{#tags}}<span class="label {{labelStyle .}}">{{.}}</span>{{/tags}}
+		</li>
+	{{/articles}}
+	</ul>
+</div>

@@ -1,8 +1,11 @@
+
+<div class="col-md-8">
 {{!< main}}
 {{#data 'articles' slug}}
 	<h1>{{title}}</h1>
-	{{dateFormat "MM-DD-YYYY" date}}
+	{{dateFormat "DD-MMM-YYYY" date}}
 	<div class="article">
 		{{{block 'content'}}}
 	</div>
 {{/data}}
+</div>
