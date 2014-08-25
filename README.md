@@ -1,4 +1,4 @@
 personal-site
 =============
 
-my very own website
+My very own website: its a work in progress.
