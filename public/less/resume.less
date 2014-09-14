@@ -1,36 +1,67 @@
 
 .resume {
 	h2 {
-		font-weight: 500;
+		font-weight: 400;
 		font-size: 2.4em;
+		text-decoration: underline;
 	}
 	h3 {
-		padding-top: 1.2em;
 		font-weight: 500;
 	}
-	header {
-		padding-top: 2em;
-		p {
-			i {
-				margin-right: 5px;
+	header.topmost {
+		margin: 2em 0;
+		.contact-info, .links {
+			p {
+				i {
+					padding-right: 5px;
+				}
+				margin: 0;
+				white-space: nowrap;
 			}
-			margin: 0;
-			white-space: nowrap;
 		}
 	}
+
+	section {
+		margin-bottom: 50px;
+	}
+
 	.duration {
 		font-family: @font-family-monospace;
-		white-space: nowrap;
-		padding-left: 10px;
 	}
-	.job-facts {
-		display: flex;
-		.location {
-			flex: 1 0 70%;
-		}
-		.duration {
-			flex: 1 0 30%;
-			text-align: right;
+
+	section.experience {
+		.job-facts {
+			display: flex;
+			.location {
+				flex: 1 0 70%;
+			}
+			.duration {
+				flex: 1 0 30%;
+				text-align: right;
+				white-space: nowrap;
+			}
 		}
 	}
+	section.education {
+		.school {
+			margin: 0 0 2em 0;
+		}
+	}
+
+	section.skills {
+		.my-skills {
+			.stars {
+				float: right;
+			}
+		}
+		ul {
+			list-style: none;
+			padding: 0;
+		}
+		.li-group {
+			text-decoration: underline;
+			font-weight: bold;
+		}
+	}
+
 }
