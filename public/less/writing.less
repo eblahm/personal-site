@@ -1,11 +1,32 @@
 
-.article {
-	font-size: 1.2em;
-	line-height: 1.6em;
-	p {
-		margin: 1.2em 0;
+.writing {
+	header {
+		text-align: center;
+	}
+	.details {
+		display: flex;
+		padding: 1em 0;
+		.tags {
+			flex: 1 0 auto;
+			text-align: right;
+		}
+		.date {
+			flex: 1 0 auto;
+			font-family: @font-family-monospace;
+			text-align: left;
+		}
+	}
+
+
+	article {
+		font-size: 1.2em;
+		line-height: 1.6em;
+		p {
+			margin: 1.2em 0;
+		}
 	}
 }
+
 .article-list {
 	margin-top: 5em;
 	list-style: none;

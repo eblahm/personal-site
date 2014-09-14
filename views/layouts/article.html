@@ -1,11 +1,24 @@
 
-<div class="col-md-8">
+<div class="col-md-8 writing">
 {{!< main}}
 {{#data 'articles' slug}}
-	<h1>{{title}}</h1>
-	{{dateFormat "DD-MMM-YYYY" date}}
-	<div class="article">
+	<header>
+
+		<div class="details">
+			<div class="date">
+				{{dateFormat "DD-MMM-YYYY" date}}
+			</div>
+			<div class="tags">
+				{{#tags}}<span class="label {{labelStyle .}}">{{.}}</span>{{/tags}}
+			</div>
+		</div>
+
+		<h1>{{title}}</h1>
+
+	</header>
+
+	<article>
 		{{{block 'content'}}}
-	</div>
+	</article>
 {{/data}}
 </div>
