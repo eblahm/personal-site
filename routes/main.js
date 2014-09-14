@@ -5,7 +5,10 @@ var _ = require('lodash'),
 	meta = require('../content/meta.json');
 
 exports.landing = function(req, res) {
-	res.render('home', {});
+	res.render('home', {
+		title: 'Matthew Halbe',
+		page: 'about'
+	});
 };
 
 exports.page = function(req, res) {

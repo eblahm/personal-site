@@ -17,10 +17,12 @@ var debug = require('debug')('personal-site'),
 
 app.engine('.html', hbs.express3({
 	defaultLayout: path.join(__dirname + '/views/layouts/main'),
+	layoutsDir: path.join(__dirname + '/views/layouts'),
+	partialsDir: path.join(__dirname + '/views/partials'),
 	extname: '.html',
-	helpers: helpers,
-	layoutsDir: path.join(__dirname + '/views/layouts')
+	helpers: helpers
 }));
+
 _.each(helpers, function(fn, name){
 	hbs.registerHelper(name, fn);
 });

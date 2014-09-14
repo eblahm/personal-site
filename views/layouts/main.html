@@ -15,24 +15,17 @@
 <div class="container-fluid">
 	<div class="row">
 
-		<div class="col-md-3">
-			<ul class="nav">
-				<div class="brand">
-					<h1 class="name">{{siteTitle}}</h1>
-				</div>
-				<li class="section-name {{#eq page "writing"}} active{{/eq}}"><a href="/writing">Writing</a></li>
-				<li class="section-name {{#eq page "software"}} active{{/eq}}"><a href="/software">Software</a></li>
-				<li class="section-name {{#eq page "translation-work"}} active{{/eq}}"><a href="/translation-work">Translation Work</a></li>
-				<li class="section-name {{#eq page "resume"}} active{{/eq}}"><a href="/resume">Resume</a></li>
-			</ul>
-		</div>
+		<div class="content">
+			<div class="col-md-2">
+				{{> nav}}
+			</div>
 
-		<div class="col-md-9">
-			<div class="row">
-				{{{body}}}
+			<div class="col-md-10">
+				<div class="row">
+					{{{body}}}
+				</div>
 			</div>
 		</div>
-
 	</div>
 
 </div>
