@@ -31,15 +31,32 @@
 	section.experience {
 		.job-facts {
 			display: flex;
+			justify-content: space-between;
 			.location {
-				flex: 1 0 70%;
+				flex: 1 1;
 			}
 			.duration {
-				flex: 1 0 30%;
+				flex: 1 1;
 				text-align: right;
-				white-space: nowrap;
+			}
+
+		}
+
+		@media (max-width: @screen-phone) {
+			.job-facts {
+				margin: 0;
+				flex-flow: column;
+				.location,
+				.duration {
+					margin: 5px 0;
+					text-align: left;
+				}
+			}
+			.bullets {
+				padding-left: 10px;
 			}
 		}
+
 	}
 	section.education {
 		.school {
@@ -59,6 +76,17 @@
 		}
 		.li-group {
 			font-weight: bold;
+		}
+		.skills-legend {
+			ul {
+				font-size: .8em;
+				display: flex;
+				flex-flow: row wrap;
+				li {
+					padding: 0 5px;
+					white-space: nowrap;
+				}
+			}
 		}
 	}
 

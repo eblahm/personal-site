@@ -1,4 +1,4 @@
-
+'use strict';
 
 module.exports = function(req, res, next) {
 	var err = new Error('Not Found');
@@ -6,6 +6,6 @@ module.exports = function(req, res, next) {
 	res.render('error', {
 		title: 'not Found',
 		message: err.message,
-		dev: app.get('env') === 'development'
+		dev: process.ENV === 'development'
 	});
 };

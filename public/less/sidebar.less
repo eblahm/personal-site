@@ -1,77 +1,35 @@
-
 .top-row {
 	border: 1px solid #000000;
 }
 
-.brand {
-	padding: 0 0 1em 0;
-	.name {
-		white-space: nowrap;
-		font-weight: 300;
-		font-size: 1.8em;
-		margin: 0;
-		padding: 0;
+.links {
+	font-size: 1.6em;
+	display: flex;
+	flex-flow: row nowrap;
+	list-style: none;
+	padding: 0;
+	li {
+		padding: 0 5px;
 	}
 }
 
 .nav {
-	font-size: 1.2em;
 	list-style: none;
 	padding: 0;
-	.active {
-		text-decoration: underline;
-	}
+
 	.section-name {
+		font-size: 1.4em;
 		cursor: pointer;
 		border: 1px solid transparent;
 		font-weight: 300;
-
+		&.active {
+			font-weight: 500;
+		}
 		a {
 			color: #000000;
 		}
-		&:hover {
-			border: 1px solid #000000;
-		}
-	}
-}
-
-@media (min-width: @screen-phone) and (max-width: @screen-md){
-	.nav {
-		display: flex;
-		font-size: 1em;
-		.brand {
-			padding: 1em 1em 1em 0;
-		}
-		.active {
-			background-color: lightgray;
-			text-decoration: none;
-		}
-	}
-	.section-name {
-		flex: 1 0 auto;
-		padding: .5em 0;
-		margin: auto 0;
-		text-align: center;
-	}
-}
-
-@media (max-width: @screen-phone) {
-	.brand {
-		padding: .5em;
-		.name {
-			font-size: 1.2em;
-			font-weight: bold;
-		}
-	}
-	.nav {
-		.active {
-			background-color: lightgray;
-			text-decoration: none;
-		}
 	}
 
-	.section-name {
-		font-size: .8em;
-		padding: .5em;
-	}
 }
+
+
