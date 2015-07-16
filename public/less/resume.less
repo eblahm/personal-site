@@ -6,7 +6,12 @@
 		text-decoration: underline;
 	}
 	h3 {
+		font-size: 1.8em;
 		font-weight: 500;
+		margin: 0;
+	}
+	li {
+		line-height: 1.5em;
 	}
 	header.topmost {
 		.contact-info, .links {
@@ -18,6 +23,12 @@
 				white-space: nowrap;
 			}
 		}
+	}
+	.job {
+		margin-bottom: 50px;
+	}
+	.bullets {
+		margin: 0;
 	}
 
 	section {
@@ -41,22 +52,6 @@
 			}
 
 		}
-
-		@media (max-width: @screen-phone) {
-			.job-facts {
-				margin: 0;
-				flex-flow: column;
-				.location,
-				.duration {
-					margin: 5px 0;
-					text-align: left;
-				}
-			}
-			.bullets {
-				padding-left: 10px;
-			}
-		}
-
 	}
 	section.education {
 		.school {
@@ -68,6 +63,11 @@
 		.my-skills {
 			.stars {
 				float: right;
+			}
+			display: flex;
+			div {
+				margin: 0 10px;
+				flex: 1 0;
 			}
 		}
 		ul {
@@ -88,6 +88,7 @@
 				}
 			}
 		}
+	
 	}
 
 }

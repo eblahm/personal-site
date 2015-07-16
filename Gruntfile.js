@@ -4,11 +4,24 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		copy: {
-			bower: {
+			bowerJS: {
 				files: [{
 					cwd: 'bower_components',
-					src: ['jquery/dist/jquery.js'],
+					src: [
+						'jquery/dist/jquery.js'
+					],
 					dest: 'public/js/bower',
+					expand: true,
+					flatten: true
+				}]
+			},
+			bowerCSS: {
+				files: [{
+					cwd: 'bower_components',
+					src: [
+						'normalize.css/*'
+					],
+					dest: 'public/css',
 					expand: true,
 					flatten: true
 				}]

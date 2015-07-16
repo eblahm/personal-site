@@ -6,30 +6,27 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>{{ title }}</title>
 	<link type="text/css" rel="stylesheet" href="/fonts/Fira/fira.css" />
+	<link type="text/css" rel="stylesheet" href="/css/normalize.css" />
 	<link type="text/css" rel="stylesheet" href="/css/main.css" />
 	<script type="text/javascript" src="/js/bower/jquery.js"></script>
 	<script type="text/javascript" src="/js/main.js"></script>
 </head>
 <body style="background-color: rgba(144, 145, 35, .03)">
 
-	<div class="container-fluid">
-		
-		<div class="main-flex-container">
+	<div class="main-flex-container">
 
-			<div class="nav-container">
-				{{> nav}}
-			</div>
-
-			<div class="content">
-				<div>
-					{{{body}}}
-					{{> socialLinks}}
-				</div>
-			</div>
-
-			<div class="right-sidebar"></div>
-
+		<div class="nav-container">
+			{{> nav}}
+			{{> socialLinks}}
 		</div>
+
+		<div class="content">
+			<div>
+				{{{body}}}
+			</div>
+		</div>
+
+		<div class="right-sidebar"></div>
 
 	</div>
 
