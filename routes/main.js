@@ -17,10 +17,16 @@ exports.page = function(req, res) {
 		res.render(page, {
 			title: page,
 			page: page,
-			articles: _.map(meta['articles'], function(props, slug) {
+			articles: _.chain(meta['articles'])
+			.map(function(props, slug) {
 				props.slug = slug;
-				return props
+				return props;
 			})
+			.sortBy(function(props) {
+				var val = new Date(props.date);
+				return val.getTime() * -1;
+			})
+			.value()
 		});
 	}
 	else {
