@@ -31,6 +31,16 @@ article {
 	display: flex;
 	flex-flow: row nowrap;
 
+	@media (max-width: @tablet) {
+		flex-direction: column;
+		.contact-container {
+			display: none;
+		}
+		&.about {
+			display: block;
+		}
+	}
+
 	.nav-container {
 		flex: 1 0;
 		padding: 10px 0 0 20px;
