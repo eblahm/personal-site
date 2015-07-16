@@ -1,0 +1,18 @@
+
+.tablet(@rules) {
+  @media (max-width: @tablet-width) {
+		@rules(); 
+	}
+	@media (max-device-width: @tablet-width) {
+		@rules(); 
+	}
+}
+
+.phone(@rules) {
+  @media  (max-width: @phone-width) {
+		@rules(); 
+	}
+	@media (max-device-width: @phone-width) {
+		@rules(); 
+	}
+}

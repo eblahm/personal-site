@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{{ title }}</title>
 	<link type="text/css" rel="stylesheet" href="/fonts/Fira/fira.css" />
 	<link type="text/css" rel="stylesheet" href="/css/normalize.css" />
@@ -13,7 +14,7 @@
 </head>
 <body style="background-color: rgba(144, 145, 35, .03)">
 
-	<div class="main-flex-container {{page}}">
+	<div class="main-flex-container {{page}} {{#slug}}slug{{/slug}}">
 
 		<div class="nav-container">
 			{{> nav}}

@@ -31,19 +31,12 @@ article {
 	display: flex;
 	flex-flow: row nowrap;
 
-	@media (max-width: @tablet) {
-		flex-direction: column;
-		.contact-container {
-			display: none;
-		}
-		&.about {
-			display: block;
-		}
-	}
 
 	.nav-container {
 		flex: 1 0;
 		padding: 10px 0 0 20px;
+		display: flex;
+		flex-direction: column;
 	}
 	.content {
 		flex: 5 0;
@@ -55,5 +48,43 @@ article {
 	}
 	.right-sidebar {
 		flex: 1 0;
+	}
+
+	.tablet({
+		flex-direction: column;
+		.contact-container {
+			display: none;
+		}
+		&.slug, &.about, &.resume {
+			flex-direction: column-reverse;
+			.nav-container {
+				text-align: center;
+				padding: 0;
+			}
+			.nav {
+				order: 2;
+			}
+			.contact-container {
+				order: 1;
+				display: block;
+				ul {
+					display: flex;
+				}
+				li {
+					flex: 1 0;
+					font-size: 2em;
+				}
+			}
+		}
+		&.slug {
+			.nav {
+				display: none;
+			}
+		}
+	});
+	@media (max-width: 1150px) {
+		.right-sidebar {
+			flex: 0 0;
+		}
 	}
 }
